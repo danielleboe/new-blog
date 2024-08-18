@@ -1,0 +1,40 @@
+<!-- views/single-post.handlebars -->
+<<<<<<< HEAD
+<link rel="stylesheet" href="/css/styles.css">
+
+<div class="p-container">
+<h1>{{post.post_title}}</h1>
+<p>{{post.post_txt}}</p>
+=======
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+>>>>>>> 701c73d (routes updates)
+<p>Posted by {{post.user.username}}</p>
+ <p><small>Posted on {{post.createdAt}}</small></p>
+
+<h2>Comments</h2>
+{{#each post.comments}}
+  <p><strong>{{this.user.username}}:</strong> {{this.comment_txt}}</p>
+{{/each}}
+
+{{#if logged_in}}
+  <form id="comment-form">
+    <input type="hidden" value="{{post.id}}" id="post_id"/>
+    <textarea name="comment_text" id="comment-text" rows="3"></textarea>
+    <button type="submit">Add Comment</button>
+  </form>
+{{else}}
+ <div class="login-button-div">
+        <button onclick="document.getElementById('login-modal').style.display='block'" class="login-button">
+            LOG IN TO COMMENT
+        </button>
+    </div>
+{{/if}}
+
+</div>
+
+<<<<<<< HEAD
+ <script src="/js/post.js" type="text/javascript"></script>
+=======
+ <script src="./js/post.js"></script>
+>>>>>>> 701c73d (routes updates)

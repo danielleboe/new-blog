@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+/* post partial */
+
+body {
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+.post{
+  text-align:left;
+  color:black;
+}
+
+a{
+  text-decoration:none;
+}
+
+.top-nav{
+  display:block;
+  align-items: center;
+  margin: 10px;
+}
+
+.headline{
+text-align:center;
+font-size: 40px;
+margin:0;
+
+}
+
+.post-container{
+margin: 50px 50px;
+
+}
+
+.content {
+  max-width: 100%;
+  padding: 10px;
+  margin: 0px;
+  flex: 1; /* This allows the container to grow and push the footer down */
+  padding-bottom: 50px; /* Adjust this value to create space for the footer */
+  flex-direction: row;
+}
+
+.content .header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 200;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  height: auto;
+}
+
+
+footer {
+  margin-top: auto; /* This pushes the footer to the bottom */
+  background: transparent;
+  text-align: center;
+  padding: 30px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .left,
+  .main,
+  .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+
+
+/* Dashboard Style */
+.dashboard-section{
+  margin: 20px;
+
+}
+
+#newpost-button{
+  margin: 50px;
+}
+.new-post-container{
+  display:flex;
+  justify-content:end;
+
+}
+
+/* /Blog Post */
+
+
+.p-container{
+  margin: 0 50px 50px 50px;
+}
