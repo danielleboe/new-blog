@@ -65,15 +65,6 @@ nav {
   align-items: center;
 }
 
-#search-input {
-  padding: 6px;
-  border-width: 2px;
-  border-color: black;
-  font-size: 100%;
-  border-radius: 20px;
-  border-style: solid;
-}
-
 #myAccount {
   height: 40px;
 }
@@ -195,16 +186,6 @@ ul {
   display: flex;
   align-items: center; /* Aligns items vertically */
   justify-content: space-between; /* Adds space between items */
-}
-
-.remember {
-  display: flex;
-  align-items: center; /* Aligns checkbox and label text vertically */
-}
-
-.forgotPassword {
-  text-decoration: none;
-  color: #000;
 }
 
 /* Add Zoom Animation */
