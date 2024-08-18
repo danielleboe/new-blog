@@ -13,7 +13,6 @@ router.use("/api", apiRoutes);
 router.use(bodyParser.json());
 router.use(methodOverride('_method'));
 
-<<<<<<< HEAD
 // router.get("/dashboard", (req, res) => {
 //   console.log(`1@@@@@@@@@@dashboard`);
 //   res.render('dashboard', { title: 'Dashboard' });
@@ -22,26 +21,10 @@ router.use(methodOverride('_method'));
 // router.get("/dashboard", ensureAuthenticated, (req, res) => {
 //   res.render("dashboard");
 // });
-=======
-router.get("/dashboard", (req, res) => {
-  console.log(`1@@@@@@@@@@dashboard`);
-  res.render('dashboard', { title: 'Dashboard' });
-});
->>>>>>> 701c73d (routes updates)
 
 
-<<<<<<< HEAD
 //render the blog posts on dashboard
 router.get("/dashboard", async (req, res) => {
-=======
-router.get("/blog-post", (req, res) => {
-  console.log(`1@@@@@@@@@@blogpost`);
-  res.render('blogPost', { title: 'Blog Post' });
-});
-
-//render the blog posts on homepage
-router.get('/', async (req, res) => {
->>>>>>> 701c73d (routes updates)
   try {
     const postData = await Post.findAll({
       where: {user_id: req.user.id},
@@ -69,10 +52,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 701c73d (routes updates)
 module.exports = router;
 
 
