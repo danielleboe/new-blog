@@ -16,7 +16,11 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    maxAge: 10 * 60 * 1000,  // Set session timeout to 30 minutes (30 * 60 * 1000 ms)
+    httpOnly: true,          // Ensures the cookie is sent only over HTTP(S), not client JavaScript
+    secure: process.env.NODE_ENV === 'production', // Ensures the cookie is sent over HTTPS in production
+  },
   resave: false,
   saveUninitialized: false,
   store: new SequelizeStore({
@@ -25,6 +29,9 @@ const sess = {
 };
 
 app.use(session(sess));
+
+// Register Handlebars helpers
+require('./utils/handlebarsHelpers');
 
 const hbs = exphbs.create({
   // Register partials directory

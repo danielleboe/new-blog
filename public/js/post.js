@@ -1,4 +1,5 @@
 
+//comment event listener
 document.getElementById('comment-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
