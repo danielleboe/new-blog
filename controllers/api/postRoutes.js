@@ -38,33 +38,26 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a new post
-// router.post('/', async (req, res) => {
-//   try {
-//     const newPost = await Post.create({
-//       user_id: req.body.user_id,
-//       post_title: req.body.post_title,
-//       post_txt: req.body.post_txt,
-//     });
-//     res.json(newCategory);
-
-//     // res.redirect('/');
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
+// Route to handle the form submission
 router.post('/', async (req, res) => {
   try {
-    const newPost = await Post.create(req.body);
-    res.json(newPost);
+    const { username, blogTitle, blogContent } = req.body;
+    // console.log(`blogcontent@@@@@`,blogContent, blogTitle);
+
+    const newPost = await Post.create({
+      user_id: req.user.id,
+      post_title: blogTitle,
+      post_txt: blogContent,
+    });
+
+    res.redirect(`/posts/${newPost.id}`);
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
 
-
-//PUT - Update an exisiting post by ID
+// PUT
 router.put('/:id', async (req, res) => {
   const postId = req.params.id;
   const { blogTitle, blogContent } = req.body;
