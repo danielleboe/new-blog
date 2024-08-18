@@ -1,0 +1,22 @@
+{{!--
+<link rel="stylesheet" href="/css/blog.css"> --}}
+
+<section class="home-content">
+  <main class="header">
+    <!-- Blog Headline Section -->
+    <div class="headline">
+      <h1>THE TECH BLOG</h1>
+    </div>
+  </main>
+
+  <div class="c">
+
+    {{#each posts}}
+    <div class="post-container">
+      {{> post}}
+    </div>
+    {{/each}}
+
+  </div>
+  {{!--
+  <script src="./js/blog.js"></script> --}}

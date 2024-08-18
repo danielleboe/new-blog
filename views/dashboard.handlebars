@@ -1,0 +1,21 @@
+ <link rel="stylesheet" href="/css/form.css">
+
+<section class="dashboard-section">  
+
+    <div class="new-post-container"> 
+            <div id="'newpost-button">
+                <a href="/blog-form" class="button" id="submit">Create New Post
+                </a>
+            </div>
+
+</div>
+  <div class="posts-container">
+
+    {{#each posts}}
+    <div class="post-container">
+      {{> dashboardPost}}
+    </div>
+    {{/each}}
+
+  </div>
+</section>

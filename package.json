@@ -1,0 +1,49 @@
+{
+  "name": "develop",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "author": "Danielle Boenisch",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "csv-parser": "^3.0.0",
+    "dayjs": "^1.11.12",
+    "debug": "~3.2.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.8",
+    "exphbs": "^1.2.0",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "express-openid-connect": "^2.17.0",
+    "express-session": "^1.18.0",
+    "flash": "^1.1.0",
+    "handlebars": "^4.7.8",
+    "hbs": "^4.2.0",
+    "http-errors": "~1.8.1",
+    "method-override": "^3.0.0",
+    "morgan": "~1.10.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.4",
+<<<<<<< HEAD
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+=======
+>>>>>>> 701c73d (routes updates)
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "postgres": "^3.4.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
