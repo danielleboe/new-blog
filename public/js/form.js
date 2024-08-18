@@ -17,10 +17,6 @@ submit.addEventListener("click", async function (event) {
   const blogForm = document.getElementById("blogForm");
   let isError = false;
 
-//   if (username.trim() === "" || !username) {
-//     console.log("username+++++", username);
-//     displayMessage("error", "Username cannot be blank");
-//     isError = true;
    if (blogTitle.trim() === "" || !blogTitle) {
     displayMessage("error", "Title cannot be blank");
     isError = true;
@@ -37,7 +33,6 @@ submit.addEventListener("click", async function (event) {
 
     // declare variable for the json object for indiviual post
     const singlePost = {
-    //   username: username.value,
       blogTitle: blogTitle,
       blogContent: blogContent,
       dttm: new Date(),
