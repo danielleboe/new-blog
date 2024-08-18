@@ -89,3 +89,38 @@ footer {
 .p-container{
   margin: 0 50px 50px 50px;
 }
+
+/* comment */
+.comment-container{
+  display:flex;
+  justify-content:center;
+  }
+.comment-button, .login-button{
+  background-color: #3dd1e7;
+  box-sizing: border-box;
+  color: #000000;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  /* cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation; */
+  margin-bottom: 5%;
+  margin-top: 2%;
+
+}
+
+
+#comment-text{
+  width: 400px;
+}
