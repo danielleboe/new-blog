@@ -1,5 +1,10 @@
-# blog
+# Project Title
+
 Blog Application
+
+## Description
+
+A simple blog application that allows a user to view, create, edit, delete posts and create comments on posts through authentication
 
 
 ##User Story
@@ -41,3 +46,64 @@ WHEN I click on the logout option in the navigation
 THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
+
+
+## Demo Video
+[![Demo Video](./readme%20files/Home%20page.png)](./readme%20files/Tech%20Blog.mp4)
+
+### Screenshots
+
+Homepage
+![Homepage](./readme%20files/Home%20page.png)
+
+Signup modal
+![Alt text](./readme%20files/Signup.png)
+
+Login modal
+![Alt text](./readme%20files/login.png)
+
+Post view logged out
+![Alt text](./readme%20files/blog_post.png)
+
+Post Login Commen
+![Alt text](./readme%20files/blog_post_comment.png)
+
+Edit Post
+![Alt text](./readme%20files/edit-post.png)
+
+
+
+## Getting Started
+
+### Dependencies
+
+### Installing
+* Build Command: npm install
+* Run Seed: npm run seed
+
+### Executing program
+
+* Run application: nodemon server.js or node server.js
+
+
+### Technologies Used
+- Javascript
+- Node
+- Handlebars
+- Sequelize
+- Postgres
+- Express
+- Nodemon
+- bcrypt for encryption
+- Passport for authentication
+- Flash
+- Dayjs
+
+## Authors
+
+Danielle Boenisch
+Github: https://github.com/danielleboe
+
+## License
+
+This project is licensed under the [MIT] License - see the LICENSE.md file for details
