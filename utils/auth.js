@@ -3,7 +3,6 @@ const isLoggedIn = (req) => {
 };
 
 const ensureAuthenticated = (req, res, next) => {
-  console.log(`ddddd`,(req.isAuthenticated()));
   if (req.isAuthenticated()) {
     return next();
   }

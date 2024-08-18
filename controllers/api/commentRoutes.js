@@ -5,7 +5,6 @@ const { ensureAuthenticated } = require("../../utils/auth.js"); // middleware fo
 // CREATE a new comment
 router.post("/", ensureAuthenticated, async (req, res) => {
   try {
-    console.log(`11111`, req.body);
     const newComment = await Comment.create({
       comment_txt: req.body.comment_text,
       post_id: req.body.post_id,

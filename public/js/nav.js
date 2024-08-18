@@ -81,7 +81,7 @@ logoutForm.addEventListener('submit', async (event) => {
     headers: { 'Content-Type': 'application/json' },
   });
 
-  console.log(`222222222`, response.status);
+
   if (response.ok) {
 
     document.location.replace('/');
