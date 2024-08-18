@@ -11,9 +11,6 @@ function displayMessage(type, message) {
 
 submit.addEventListener("click", async function (event) {
   event.preventDefault();
-  console.log(`click11111111111111bsubmit`);
-
-
 //   const username = usernameInput.value;
   const blogTitle = titleInput.value;
   const blogContent = contentInput.value;
@@ -45,31 +42,14 @@ submit.addEventListener("click", async function (event) {
       blogContent: blogContent,
       dttm: new Date(),
     };
-console.log(`singlepostaaaaaaaaaaaaa`, singlePost);
-
 const response = await fetch('/api/posts', {
     method: 'POST',
     body: JSON.stringify(singlePost),
     headers: { 'Content-Type': 'application/json' },
   });
 
-
-
-    // declare variable for parent
-    // add to single post to existing json array
-    // let parentPost = [];
-    // const existingPosts = JSON.parse(localStorage.getItem("parentPost"));
-
-    // //if parentpost exists then add to existing last post
-    // if (existingPosts !== null) {
-    //   parentPost = existingPosts;
-    // }
-
-    // parentPost.push(singlePost);
-
-    // //localStorage set item json.stringify()
-    // localStorage.setItem("parentPost", JSON.stringify(parentPost));
-    blogForm.reset();
+  window.location.href = `/dashboard`;
+    // blogForm.reset();
     // window.location.href = "blog.html";
   }
 });

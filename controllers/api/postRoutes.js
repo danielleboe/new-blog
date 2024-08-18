@@ -31,7 +31,10 @@ router.get('/:id', async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-    res.render('blogPost', { post, logged_in: isLoggedIn(req) });
+    res.render('blogPost', { 
+      title: "Blog Post",
+      post, 
+      logged_in: isLoggedIn(req) });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -57,59 +60,21 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT
-router.put('/:id', async (req, res) => {
-  const postId = req.params.id;
-  const { blogTitle, blogContent } = req.body;
-
-  try {
-      const updatePost = await Post.findByPk(postId);
-      if (updatePost) {
-        post.post_title  = blogTitle,
-        post.post_txt = blogContent,
-      
-          await post.save();
-          res.redirect(`/posts/${updatePost.id}`);
-      } else {
-          res.status(404).send('Post not found');
-      }
-  } catch (error) {
-      res.status(500).send('Server error');
-  }
-});
-
-
-//PUT - Update an exisiting post by ID
-// router.put('/:id', async (req, res) => {
-//   try {
-//     const [updated] = await Post.update(req.body, {
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-
-//     if (updated) {
-//       const updatedPost = await Post.findByPk(req.params.id);
-//       res.json(updatedPost);
-//     } else {
-//       res.status(404).json({ message: 'No post found with this id!' });
-//     }
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
-
 ////edit post
 router.get('/:id/edit', async (req, res) => {
   const postId = req.params.id;
   try {
       const editPost = await Post.findByPk(postId);
       if (editPost) {
-          res.render('edit-post', { post: editPost.get({ plain: true }) }); // Pass plain object
+          res.render(  'edit-post', 
+            {  title: "Edit Post",
+              post: editPost.get({ plain: true }), 
+            logged_in: isLoggedIn(req) }); // Pass plain object
+
       } else {
           res.status(404).send('Post not found');
       }
+      
   } catch (error) {
       console.error(error);
       res.status(500).send('Server error');
@@ -117,24 +82,35 @@ router.get('/:id/edit', async (req, res) => {
 });
 
 
-// router.get('/:id/edit', async (req, res) => {
-//   const postId = req.params.id;
-//   try {
-//       const post = await Post.findByPk(postId);
-//       if (post) {
-//           res.render('edit-post', { post }); // Render the edit-post handlebars template
-//       } else {
-//           res.status(404).send('Post not found');
-//       }
-//   } catch (error) {
-//       res.status(500).send('Server error');
-//   }
-// });
 
-///
+// PUT
+router.put('/:id', async (req, res) => {
+  const postId = req.params.id;
+  const { blogTitle, blogContent } = req.body;
 
+  try {
+      // Fetch the post by ID
+      const updatePost = await Post.findByPk(postId);
 
+      // Check if the post exists
+      if (!updatePost) {
+          return res.status(404).json({ message: 'Post not found' });
+      }
 
+      // Update the post's title and content
+      updatePost.post_title = blogTitle;
+      updatePost.post_txt = blogContent;
+
+      // Save the updated post
+      await updatePost.save();
+
+      // Redirect to the updated post's page
+      // res.redirect(`/dashboard`);
+  } catch (error) {
+      console.error('Error updating post:', error);
+      res.status(500).json({ message: 'Failed to update post', error: error.message });
+  }
+});
 
 
 

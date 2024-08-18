@@ -8,32 +8,36 @@
             <main class="header"> <!-- Form Header -->
                 <h1>Edit Post</h1>
             </main>
-            <form action="/api/posts/{{post.id}}" method="POST" id="blogForm">
+            <form action="/posts/{{post.id}}" method="POST" id="updateForm">
                 <input type="hidden" name="_method" value="PUT">
 
                 <div class="input-data">
                     <!-- Title Field -->
-                    <label for="blogTitle" class="formlabel">Title:</label>
-                    <input type="text" id="blogTitle" name="blogTitle" value="{{post.post_title}}" required>
+                    <label for="blogTitle" class="formlabel">Blog Title:</label><br>
+                    <input type="text" id="blogTitle" class="field" name="blogTitle" value="{{post.post_title}}" required>
                 </div>
+                <br>
                 <div class="input-data">
 
                     <!-- Content Field -->
-                    <label for="blogContent" class="formlabel">Content:</label>
-                    <textarea id="blogContent" name="blogContent" rows="10" required>{{post.post_txt}}</textarea>
+                    <label for="blogContent" class="formlabel">Content:</label><br>
+                    <textarea id="blogContent" class="field" name="blogContent" rows="10" required>{{post.post_txt}}</textarea>
                 </div>
                 <div id="msg"></div>
                 <br>
                 <!-- Submit Button -->
-                <button type="submit">Save Changes</button>
+                <button type="submit" value="save changes" id="submit" class="button" >Save Changes</button>
             </form>
+
             <!-- In your views/post-detail.handlebars or similar -->
-            <form action="/api/posts/{{post.id}}" method="POST"
+            <form action="/posts/{{post.id}}" method="POST" id="deletePost"
                 onsubmit="return confirm('Are you sure you want to delete this post?');">
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">Delete Post</button>
+                <button type="submit" id="deleteP"  class="button" >Delete Post</button>
             </form>
 
         </div>
     </section>
 </section>
+
+ <script src="/js/editPost.js"  type="text/javascript"></script>
