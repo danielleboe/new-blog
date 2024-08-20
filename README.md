@@ -80,12 +80,7 @@ Edit Post
 ### Installing
 * Build Command: npm install
 * Run Seed: npm run seed
-
-#### .env file
-DB_NAME='blog_db'
-DB_USERNAME=''
-DB_PASSWORD=''
-DB_HOST='localhost'
+Add env file
 
 ### Executing program
 
