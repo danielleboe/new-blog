@@ -81,6 +81,12 @@ Edit Post
 * Build Command: npm install
 * Run Seed: npm run seed
 
+#### .env file
+DB_NAME='blog_db'
+DB_USERNAME=''
+DB_PASSWORD=''
+DB_HOST='localhost'
+
 ### Executing program
 
 * Run application: nodemon server.js or node server.js
