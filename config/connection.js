@@ -5,16 +5,18 @@ let sequelize;
 
 if (process.env.DB_URL) {
   // Use the DATABASE_URL provided by Render
-  sequelize = new Sequelize(process.env.DB_URL, {
-    dialect: 'postgres',
-    protocol: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true, // Render databases often require SSL
-        rejectUnauthorized: false // You may need to set this depending on your configuration
-      }
-    }
-  });
+  sequelize = new Sequelize(process.env.DB_URL,
+  //    {
+  //   // dialect: 'postgres',
+  //   protocol: 'postgres',
+  //   dialectOptions: {
+  //     ssl: {
+  //       require: true, // Render databases often require SSL
+  //       rejectUnauthorized: false // You may need to set this depending on your configuration
+  //     }
+  //   }
+  // }
+);
 } else {
   // Fallback for local development or other environments
   sequelize = new Sequelize(
