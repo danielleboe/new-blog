@@ -8,6 +8,7 @@ if (process.env.DB_URL) {
      {
     dialect: 'postgres',
     protocol: 'postgres',
+    logging: false,
     dialectOptions: {
       ssl: {
         require: true, // Render databases often require SSL
