@@ -97,6 +97,7 @@ router.get("/dashboard", async (req, res) => {
     });
     // res.status(200);
   } catch (err) {
+    console.log(`dashboard error`, err);
     res.status(500).json(err);
   }
 });
