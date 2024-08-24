@@ -38,7 +38,8 @@ router.post('/signup', async (req, res) => {
       const existingUser = await User.findOne({ where: { username } });
       if (existingUser) {
         errors.push({ msg: 'Username already exists' });
-        res.render('signup', { errors, username, email, password });
+        res.status (200);
+        // ('signup', { errors, username, email, password });
       } else {
         const newUser = await User.create({ username, email, password });
 
@@ -47,7 +48,8 @@ router.post('/signup', async (req, res) => {
           if (err) {
             console.error(err);
             errors.push({ msg: 'Error logging in after signup' });
-            return res.render('signup', { errors, username, email, password });
+            return res.status(500);
+            // render('signup', { errors, username, email, password });
           }
 
           // Redirect to the dashboard or any other authenticated page
@@ -56,7 +58,8 @@ router.post('/signup', async (req, res) => {
       }
     } catch (err) {
       console.error(err);
-      res.render('signup', { errors, username, email, password });
+      res.status(500);
+      // render('signup', { errors, username, email, password });
     }
   }
 });

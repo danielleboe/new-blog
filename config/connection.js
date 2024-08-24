@@ -6,12 +6,14 @@ let sequelize;
 if (process.env.DB_URL) {
   sequelize = new Sequelize(process.env.DB_URL,
      {
-    // dialect: 'postgres',
+
+    dialect: 'postgres',
     protocol: 'postgres',
     dialectOptions: {
       ssl: {
-        require: true, 
-        rejectUnauthorized: false
+        require: true, // Render databases often require SSL
+        rejectUnauthorized: false // You may need to set this depending on your configuration
+
       }
     }
   }
