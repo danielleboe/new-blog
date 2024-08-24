@@ -52,6 +52,8 @@ router.post('/signup', async (req, res) => {
             // render('signup', { errors, username, email, password });
           }
 
+          console.log('The new user added ++++++++++++++++++++', req.user);
+
           // Redirect to the dashboard or any other authenticated page
           res.redirect('/dashboard');
         });
