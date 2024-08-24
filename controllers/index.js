@@ -76,6 +76,7 @@ router.get("/", async (req, res) => {
 //render the blog posts on dashboard
 router.get("/dashboard", async (req, res) => {
   try {
+    console.log('The user on session +++++++++++++++++++++++++', req.user);
     const postData = await Post.findAll({
       where: {user_id: req.user.id},
       order: [["createdAt", "DESC"]],
