@@ -20,7 +20,8 @@ const sess = {
     maxAge: 10 * 60 * 1000,  // Set session timeout to 30 minutes (30 * 60 * 1000 ms)
     httpOnly: true,          // Ensures the cookie is sent only over HTTP(S), not client JavaScript
     secure: process.env.NODE_ENV === 'production', // Ensures the cookie is sent over HTTPS in production
-    domain: process.env.COOKIE_DOMAIN || 'localhost'
+    // domain: process.env.COOKIE_DOMAIN || 'localhost'
+    sameSite: 'strict'
   },
   resave: false,
   saveUninitialized: false,
