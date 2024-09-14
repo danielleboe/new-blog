@@ -79,7 +79,7 @@ router.get("/dashboard", async (req, res) => {
     console.log('The user on session +++++++++++++++++++++++++', req.user);
     console.log('The body on session +++++++++++++++++++++++++', req.body);
     const postData = await Post.findAll({
-      where: {user_id: req.user.id},
+      where: {user_id: req.user.dataValues.id},
       order: [["createdAt", "DESC"]],
     });
 
