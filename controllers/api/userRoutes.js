@@ -25,6 +25,7 @@ router.get('/signup', (req, res) => res.render('login'));
 // Register Handle
 router.post('/signup', async (req, res) => {
   const { username, email, password } = req.body;
+  console.log(`username, email, password`, username, email, password);
   let errors = [];
 
   if (password.length < 6) {
